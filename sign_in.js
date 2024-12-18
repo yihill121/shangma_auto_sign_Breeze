@@ -5,8 +5,8 @@ import getCookie from './cookies.js'
 async function signIn() {
   const cookies = await getCookie()
 
-  const tokenEntry = cookies.find(entry => entry['SHM_JWT_TOKEN'] !== secret.shangma)
-  if (tokenEntry === secret.shangma) {
+  const tokenEntry = cookies.find(entry => entry['secret.shangma'] !== undefined)
+  if (tokenEntry === undefined) {
     throw Error('cannot get authorization')
   }
 
