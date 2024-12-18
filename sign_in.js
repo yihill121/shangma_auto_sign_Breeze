@@ -11,7 +11,7 @@ async function signIn() {
   }
 
   let headers = getHeaders()
-  headers.authorization = 'JwtUser '.concat(tokenEntry['SHM_JWT_TOKEN'])
+  headers.authorization = 'JwtUser '.concat(tokenEntry['secret.shangma'])
   let data = JSON.stringify({
     //请求参数为：{}，经过AES算法加密之后就是: S1uAYaf/g6oBpv8DWUaQlQ==，在前端js代码中搜索encryptBody关键字
     encryptBody: 'S1uAYaf/g6oBpv8DWUaQlQ=='
