@@ -3,7 +3,7 @@ import { getHeaders } from './lib/http_util.js'
 import getCookie from './cookies.js'
 
 async function signIn() {
-  const cookies = await getCookie(secret.SHM_JWT_TOKEN)
+  const cookies = await getCookie()
 
   const tokenEntry = cookies.find(entry => entry['SHM_JWT_TOKEN'] !== undefined)
   if (tokenEntry === undefined) {
